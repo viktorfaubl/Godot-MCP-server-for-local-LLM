@@ -1,6 +1,6 @@
 # Godot MCP Server for Local LLM
 
-A sleek C# class library designed to integrate a local **Multi-Command Protocol (MCP)** server with a local **Large Language Model (LLM)**, tailored for Godot-based games. This library empowers your LLM to seamlessly interact with the game world through structured tool commands, bringing your *Echoes of Ir*-style vision to life.
+A sleek C# class library designed to integrate a local **Model Context Protocol (MCP)** server with a local **Large Language Model (LLM)**, tailored for Godot-based games. This library empowers your LLM to seamlessly interact with the game world through structured tool commands, bringing your *Echoes of Ir*-style vision to life.
 
 ## Features
 
@@ -26,7 +26,7 @@ A sleek C# class library designed to integrate a local **Multi-Command Protocol 
 
 1. **Add MCPHandler**: Instantiate `MCPHandler` as a node in your Godot scene.
 2. **Query the LLM**: Use `LLMManager.QueryLLM(prompt, port)` to send prompts to your local LLM server.
-3. **Provide Environment Context**: Include the character’s surroundings with your input, e.g., `E:door_456,S:empty,W:trap_987,N:empty`, to guide the LLM’s decisions.
+3. **Provide Environment Context**: Include the characterâ€™s surroundings with your input, e.g., `E:door_456,S:empty,W:trap_987,N:empty`, to guide the LLMâ€™s decisions.
 4. **Handle LLM Responses**: The LLM may return tool commands in JSON format, such as:
    {
      "action": "open_door",
@@ -36,7 +36,7 @@ A sleek C# class library designed to integrate a local **Multi-Command Protocol 
 
 ## Example System Prompt
 
-Enhance your LLM’s capabilities by adding this to its system prompt:  
+Enhance your LLMâ€™s capabilities by adding this to its system prompt:  
 		`You can use tools to interact with the game world. Available tools:
         `open_door: Description: Opens a closed door in the game. Parameters: target (string): The identifier or path of the door to open. Example usage: {""action"":""open_door"",""parameters"": {""target"": ""door_1""}}
         `disarm_trap: Description: Attempts to disarm a trap in the game. Parameters: target (string): The identifier or path of the trap to disarm. Example usage: {""action"": ""disarm_trap"",""parameters"": {""target"": ""trap_3""}}
